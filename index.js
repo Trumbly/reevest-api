@@ -4,12 +4,14 @@ const Router = require("koa-router");
 const app = new Koa();
 const router = new Router();
 
+const port = process.env.PORT || 80
+
 app
     .use(require("koa-body")())
     .use(router.allowedMethods())
     .use(router.routes())
 
-app.listen(3000);
+app.listen(port);
 
 router.get("/", ctx => {
     ctx.body = "Hello world";
