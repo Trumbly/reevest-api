@@ -16,3 +16,7 @@ app.listen(port);
 router.get("/", ctx => {
     ctx.body = "Hello world";
 })
+
+router.get("/user", ctx => {
+    ctx.body = "U want to read all users? Sry, but u have to wait until tmrrw, going to bed now, over and out!";
+})
