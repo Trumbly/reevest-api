@@ -1,4 +1,3 @@
-const { errorFunc } = require('express-fileupload/lib/utilities');
 const pool = require('./db_connect');
 
 function error_handler(error, ctx){
