@@ -71,8 +71,6 @@ const updateUser = async ctx => {
         error_handler(error, ctx)
     }
     ctx.body = "Updated user with id "+id+" successfully";
-    
-
 }
 
 const deleteUser = async ctx => {

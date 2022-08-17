@@ -2,19 +2,21 @@
   "name": "reevest_api",
   "version": "1.0.0",
   "description": "This is the first API for the Reevest platform",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
+    "start": "cross-env NODE_PATH=src node src/index.js",
+    "dev": "cross-env NODE_PATH=src nodemon src/index.js"
+  }, 
   "keywords": [
     "api"
   ],
   "author": "Maximilian Noelle-Wying",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
+    "enforce-node-path": "^1.0.0",
     "koa": "^2.13.4",
     "koa-body": "^5.0.0",
     "koa-router": "^12.0.0",
