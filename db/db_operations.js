@@ -42,13 +42,13 @@ const getUserById = async ctx => {
 }
 
 const createUser = async ctx => {
-    const { name, email, invest_exp, invest_type } = ctx.request.body
+    const { name, mail, invest_exp, invest_type } = ctx.request.body
     const pw_sh5 = "PreRegUser";
     var result = -1;
     
     try {
         const client = await pool.connect();
-        result = await client.query('INSERT INTO a_user (name_string, mail, pw_sh5, invest_exp, invest_type) VALUES ($1, $2, $3, $4, $5) RETURNING ID', [name, email, pw_sh5, invest_exp, invest_type]);
+        result = await client.query('INSERT INTO a_user (name_string, mail, pw_sh5, invest_exp, invest_type) VALUES ($1, $2, $3, $4, $5) RETURNING ID', [name, mail, pw_sh5, invest_exp, invest_type]);
     } catch (error) {
         ctx.body = error;
         error_handler(error, ctx)
